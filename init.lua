@@ -10,11 +10,17 @@ Plug 'MunifTanjim/nui.nvim'
 Plug 'rcarriga/nvim-notify'          
 Plug 'folke/noice.nvim'              
 Plug 'folke/tokyonight.nvim'
+Plug 'LukasPietzschmann/telescope-tabs'
+Plug 'neovim/nvim-lspconfig'
+Plug 'ray-x/go.nvim'
+Plug 'ray-x/guihua.lua'
 
 call plug#end()
 ]]
 
-require("noice").setup({
+require('go-nvim')
+require('telescope-nv')
+require('noice').setup({
     cmdline = {
         enabled = true,
         view = "cmdline_popup",  
@@ -47,15 +53,4 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
-
-local builtin = require('telescope.builtin')
--- \ff
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
--- \fg
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
--- \fb
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
--- \fh
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
-
 
