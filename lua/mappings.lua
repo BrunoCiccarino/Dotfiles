@@ -28,3 +28,4 @@ map("v", "<leader>/", "gc", { remap = true })
 map("n", "<leader>fm", function()
   require("conform").format()
 end)
+
