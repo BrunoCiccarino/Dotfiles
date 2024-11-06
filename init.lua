@@ -2,7 +2,7 @@ require "options"
 require "mappings"
 require "commands"
 
--- bootstrap plugins & lazy.nvim
+
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim" -- path where its going to be installed
 
 if not vim.loop.fs_stat(lazypath) then
@@ -22,4 +22,4 @@ local plugins = require "plugins"
 
 require("lazy").setup(plugins, require "lazy_config")
 vim.cmd "syntax enable"
-vim.cmd "colorscheme nordern"
+vim.cmd "colorscheme catppuccin-macchiato"

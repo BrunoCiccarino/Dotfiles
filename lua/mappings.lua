@@ -1,9 +1,8 @@
 local map = vim.keymap.set
 
--- general mappings
 map("n", "<C-s>", "<cmd> w <CR>")
 map("i", "jk", "<ESC>")
-map("n", "<C-c>", "<cmd> %y+ <CR>") -- copy whole filecontent
+map("n", "<C-c>", "<cmd> %y+ <CR>")
 
 -- nvimtree
 map("n", "<C-n>", "<cmd> NvimTreeToggle <CR>")
@@ -29,3 +28,5 @@ map("n", "<leader>fm", function()
   require("conform").format()
 end)
 
+require("themesw")
+map("n", "<C-t>", ":lua SwitchTheme()<CR>", { noremap = true, silent = true })

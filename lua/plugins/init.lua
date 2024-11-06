@@ -7,6 +7,13 @@ return {
     config = true,
   },
 
+{ 
+  "catppuccin/nvim", 
+  name = "catppuccin", 
+  priority = 1000 
+
+  },
+
 {
   "folke/noice.nvim",
   event = "VeryLazy",

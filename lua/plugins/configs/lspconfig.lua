@@ -58,7 +58,7 @@ lspconfig.lua_ls.setup {
   },
 }
 
--- Setup Go LSP with additional settings
+
 lspconfig.gopls.setup {
   capabilities = capabilities,
   on_attach = function(_, bufnr)
@@ -90,7 +90,7 @@ lspconfig.gopls.setup {
   },
 }
 
--- setup multiple servers with same default options
+
 local servers = { "tsserver", "html", "cssls" }
 
 for _, lsp in ipairs(servers) do
