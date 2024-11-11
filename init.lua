@@ -1,6 +1,8 @@
 require "options"
 require "mappings"
 require "commands"
+require("jalance-nvim.src")
+require("dadbod-nvim.lua")
 
 
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim" -- path where its going to be installed
@@ -22,4 +24,4 @@ local plugins = require "plugins"
 
 require("lazy").setup(plugins, require "lazy_config")
 vim.cmd "syntax enable"
-vim.cmd "colorscheme catppuccin-macchiato"
+vim.cmd "colorscheme jellybeans"

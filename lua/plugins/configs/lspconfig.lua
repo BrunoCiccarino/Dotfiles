@@ -91,7 +91,8 @@ lspconfig.gopls.setup {
 }
 
 
-local servers = { "tsserver", "html", "cssls" }
+server_name = server_name == 'tsserver' and 'ts_ls' or server_name
+local servers = { server_name, "html", "cssls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
