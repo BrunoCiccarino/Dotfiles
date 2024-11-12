@@ -2,8 +2,6 @@ require "options"
 require "mappings"
 require "commands"
 require("jalance-nvim.src")
-require("dadbod-nvim.lua")
-
 
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim" -- path where its going to be installed
 

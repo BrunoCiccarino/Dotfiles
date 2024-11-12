@@ -18,6 +18,13 @@ return {
 
   },
 
+  {
+    'madskjeldgaard/cppman.nvim',
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+    },
+  },
+
 {
   "folke/noice.nvim",
   event = "VeryLazy",
@@ -121,7 +128,12 @@ return {
     "williamboman/mason.nvim",
     build = ":MasonUpdate",
     cmd = { "Mason", "MasonInstall" },
-    opts = {},
+    opts = {
+      ensure_installed = {
+        "clangd",
+        "golps"
+      }
+    },
   },
 
   {
