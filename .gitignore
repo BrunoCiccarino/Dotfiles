@@ -3,3 +3,4 @@ lua/prettier/*
 lua/jalance-nvim/
 lua/dadbod-nvim/
 lua/intelli/nvim/
+lua/nvpm/

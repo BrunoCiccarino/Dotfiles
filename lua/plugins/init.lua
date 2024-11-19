@@ -11,20 +11,34 @@ return {
     priority = 1000,
     config = true,
   },
+  {
+    "BrunoCiccarino/gruverboxer-material.nvim",
+    priority = 1000,
+    config = true,
+  },
+  { "ellisonleao/gruvbox.nvim", 
+    priority = 1000 , 
+    config = true, 
+    opts = ...},
 { 
   "catppuccin/nvim", 
   name = "catppuccin", 
   priority = 1000 
 
   },
-
-  {
-    'madskjeldgaard/cppman.nvim',
-    dependencies = {
-      'MunifTanjim/nui.nvim',
-    },
+  { 
+    "CRAG666/code_runner.nvim", 
+    config = true 
   },
-
+{
+    "OXY2DEV/markview.nvim",
+    lazy = false,      
+    
+    dependencies = {
+        "nvim-treesitter/nvim-treesitter",
+        "nvim-tree/nvim-web-devicons"
+    }
+},
 {
   "folke/noice.nvim",
   event = "VeryLazy",
@@ -131,7 +145,7 @@ return {
     opts = {
       ensure_installed = {
         "clangd",
-        "golps"
+        "golps",
       }
     },
   },

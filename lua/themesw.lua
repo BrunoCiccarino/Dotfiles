@@ -1,4 +1,4 @@
-local themes = { 'catppuccin-macchiato', 'catppuccin-frappe', 'catppuccin-mocha' }  
+local themes = { 'jellybeans', 'gruvbox', 'catppuccin-mocha' }  
 local current_theme = 1  
 
 function SwitchTheme()
