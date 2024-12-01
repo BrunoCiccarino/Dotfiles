@@ -35,3 +35,6 @@ vim.env.PATH = vim.env.PATH .. (is_windows and ";" or ":") .. vim.fn.stdpath "da
 
 vim.api.nvim_set_hl(0, "IndentLine", { link = "Comment" })
 
+vim.cmd([[
+  autocmd VimEnter * split | terminal
+]])
