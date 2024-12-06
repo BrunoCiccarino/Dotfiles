@@ -1,8 +1,10 @@
+
+
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("org" . "https://orgmode.org/elpa/")
                          ("gnu" . "https://elpa.gnu.org/packages/")))
-(package-initialize)
+
 (unless package-archive-contents
   (package-refresh-contents))
 
@@ -22,7 +24,7 @@
   (package-refresh-contents)
   (package-install 'hydra))
 
-(load-theme 'gruvbox t)
+(load-theme 'gruber-darker t)
 
 (global-set-key (kbd "C-c b") 'load-themes/body)
 
@@ -44,6 +46,7 @@
 (setq auto-mode-alist (append '(("\\.scm$" . scheme-mode)) auto-mode-alist))
 (setq auto-mode-alist (append '(("\\.lisp$" . lisp-mode)) auto-mode-alist))
 (add-to-list 'auto-mode-alist '("\\.el\\'" . emacs-lisp-mode))
+(load-file "~/.emacs.d/modes/haskell-mode.el")
 
 (use-package all-the-icons
   :ensure t)
@@ -140,7 +143,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(gams-ac gams-mode ghc-imported-from ghci-completion github-dark-vscode-theme gruvbox-theme lsp-pyright lsp-ui lsp-mode vertico-posframe vertico treemacs all-the-icons doom-themes hydra)))
+   '(auto-complete haskell-mode markdown-mode gruber-darker-theme gams-ac gams-mode ghc-imported-from ghci-completion github-dark-vscode-theme gruvbox-theme lsp-pyright lsp-ui lsp-mode vertico-posframe vertico treemacs all-the-icons doom-themes hydra)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
