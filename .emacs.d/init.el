@@ -1,5 +1,3 @@
-
-
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("org" . "https://orgmode.org/elpa/")
@@ -46,17 +44,25 @@
 (setq auto-mode-alist (append '(("\\.scm$" . scheme-mode)) auto-mode-alist))
 (setq auto-mode-alist (append '(("\\.lisp$" . lisp-mode)) auto-mode-alist))
 (add-to-list 'auto-mode-alist '("\\.el\\'" . emacs-lisp-mode))
+
 (load-file "~/.emacs.d/modes/haskell-mode.el")
+(load-file "~/.emacs.d/modes/c-mode.el")
 
 (use-package all-the-icons
   :ensure t)
+
+(defun open-dired ()
+  
+  (interactive)
+  (dired default-directory))
+
 
 (define-prefix-command 'my-leader-map)
 (global-set-key (kbd "\\") 'my-leader-map)
 (define-key my-leader-map (kbd "a a") 'set-mark-command) ;; Shortcut to select multiple lines (C-c C-a)
 (define-key my-leader-map (kbd "v v") 'yank) ;; Shortcut to paste (C-c C-v)
 (define-key my-leader-map (kbd "k k") 'save-buffer) ;; Shortcut to save (C-c C-s) 
-
+(define-key my-leader-map (kbd "e e") 'open-dired) ;; Leader \ e e for open file explorer
 
 (define-key my-leader-map (kbd "f f") 'treemacs)     
 (define-key my-leader-map (kbd "b b") 'switch-to-buffer) 
@@ -104,36 +110,7 @@
                          (require 'lsp-pyright)
                          (lsp))))
 
-(use-package lsp-mode
-  :ensure t
-  :hook ((lsp-mode . lsp-enable-which-key-integration))
-  :config (setq lsp-completion-enable-additional-text-edit nil))
-(use-package lsp-ui
-  :commands lsp-ui-mode
-  :ensure t)
-(use-package ccls
-  :ensure t
-  :config
-  (setq ccls-executable "ccls")
-  (setq lsp-prefer-flymake nil)
-  (setq-default flycheck-disabled-checkers '(c/c++-clang c/c++-cppcheck c/c++-gcc))
-  :hook ((c-mode c++-mode objc-mode) .
-         (lambda () (require 'ccls) (lsp))))
-(use-package flycheck
-  :ensure t)
-(use-package yasnippet
-  :ensure t
-  :config (yas-global-mode))
-(use-package which-key
-  :ensure t
-  :config (which-key-mode))
-(use-package helm-lsp
-  :ensure t)
-(use-package helm
-  :ensure t
-  :config (helm-mode))
-(use-package lsp-treemacs
-  :ensure t)
+
 
 ;;; This will enable emacs to compile a simple cpp single file without any makefile by just pressing [f9] key
 (defun code-compile()
@@ -148,9 +125,10 @@
     (compile compile-command)))
 (global-set-key [f9] 'code-compile)
 
-;; Configurar teclas globais
+
 (global-set-key (kbd "C-c C-e") 'eval-last-sexp)
 (global-set-key (kbd "C-c C-r") 'eval-region)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
