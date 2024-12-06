@@ -9,6 +9,10 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 (require 'use-package)
 (setq use-package-always-ensure t)
 (package-refresh-contents)
@@ -18,23 +22,7 @@
   (package-refresh-contents)
   (package-install 'hydra))
 
-(load-theme 'doom-shades-of-purple t)
-
-(require 'hydra)
-
-(defun safe-load-theme (theme)
-  "Load THEME only if it's available."
-  (if (member theme (custom-available-themes))
-      (load-theme theme t)
-    (message "Theme %s not found" theme)))
-
-(defhydra load-themes (:color blue)
-  "load themes"
-  ("1" (load-theme 'doom-shades-of-purple t) "doom shades of purple")
-  ("2" (load-theme 'doom-snazzy t) "doom-snazzy")
-  ("3" (load-theme 'doom-dracula t) "doom-dracula")
-  ("4" (load-theme 'doom-spacegrey t) "doom-spacegrey")
-  ("q" nil "quit"))
+(load-theme 'gruvbox t)
 
 (global-set-key (kbd "C-c b") 'load-themes/body)
 
@@ -47,6 +35,7 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (tooltip-mode -1)
+(menu-bar-mode 0)
 
 (setq inhibit-startup-message t)
 (setq-default indent-tabs-mode nil)
@@ -61,10 +50,9 @@
 
 (define-prefix-command 'my-leader-map)
 (global-set-key (kbd "\\") 'my-leader-map)
-(global-set-key (kbd "C-c C-c") 'kill-ring-save) ;; Shortcut to copy   
-(global-set-key (kbd "C-c C-a") 'set-mark-command) ;; Shortcut to select multiple lines (C-c C-a)
-(global-set-key (kbd "C-c C-v") 'yank) ;; Shortcut to paste (C-c C-v)
-(global-set-key (kbd "C-c C-s") 'save-buffer) ;; Shortcut to save (C-c C-s) 
+(define-key my-leader-map (kbd "a a") 'set-mark-command) ;; Shortcut to select multiple lines (C-c C-a)
+(define-key my-leader-map (kbd "v v") 'yank) ;; Shortcut to paste (C-c C-v)
+(define-key my-leader-map (kbd "k k") 'save-buffer) ;; Shortcut to save (C-c C-s) 
 
 
 (define-key my-leader-map (kbd "f f") 'treemacs)     
@@ -152,7 +140,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(lsp-pyright lsp-ui lsp-mode vertico-posframe vertico treemacs all-the-icons doom-themes hydra)))
+   '(gams-ac gams-mode ghc-imported-from ghci-completion github-dark-vscode-theme gruvbox-theme lsp-pyright lsp-ui lsp-mode vertico-posframe vertico treemacs all-the-icons doom-themes hydra)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
