@@ -47,7 +47,6 @@
 
 (load-file "~/.emacs.d/modes/haskell-mode.el")
 (load-file "~/.emacs.d/modes/c-mode.el")
-(load-file "~/.emacs.d/modes/asm-mode.el")
 
 (use-package all-the-icons
   :ensure t)
@@ -98,6 +97,7 @@
 
 (ac-config-default)
 (global-auto-complete-mode t)
+
 (use-package lsp-mode
   :init
   (setq lsp-keymap-prefix "C-c l")
@@ -112,7 +112,6 @@
   :hook (python-mode . (lambda ()
                          (require 'lsp-pyright)
                          (lsp))))
-
 
 
 ;;; This will enable emacs to compile a simple cpp single file without any makefile by just pressing [f9] key
