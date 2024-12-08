@@ -57,6 +57,12 @@
   (interactive)
   (dired default-directory))
 
+(defun my-eshell-split-window ()
+  
+  (interactive)
+  (split-window-below)         
+  (other-window 1)             
+  (eshell))                    
 
 (define-prefix-command 'my-leader-map)
 (global-set-key (kbd "\\") 'my-leader-map)
@@ -67,7 +73,7 @@
 
 (define-key my-leader-map (kbd "f f") 'treemacs)     
 (define-key my-leader-map (kbd "b b") 'switch-to-buffer) 
-(define-key my-leader-map (kbd "w s") 'eshell) 
+(define-key my-leader-map (kbd "w s") 'my-eshell-split-window)
 
 (define-key my-leader-map (kbd "e n") 'dired-create-empty-file) ;; \ e n to create a new file
 (define-key my-leader-map (kbd "e d") 'dired-create-directory) ;; \ e d to create a new directory
