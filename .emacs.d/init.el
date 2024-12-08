@@ -69,6 +69,9 @@
 (define-key my-leader-map (kbd "b b") 'switch-to-buffer) 
 (define-key my-leader-map (kbd "w s") 'eshell) 
 
+(define-key my-leader-map (kbd "e n") 'dired-create-empty-file) ;; \ e n to create a new file
+(define-key my-leader-map (kbd "e d") 'dired-create-directory) ;; \ e d to create a new directory
+
 (defun move-line-up ()
   (interactive)
   (transpose-lines 1)
