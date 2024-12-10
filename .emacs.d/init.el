@@ -67,10 +67,7 @@
 (global-set-key (kbd "C-c f") 'open-dired)
 (global-set-key (kbd "C-c q") 'save-buffers-kill-emacs)
 
-(global-set-key (kbd "C-c s") 'my-eshell-split-window) ;; Alt+Shift+W S para abrir Eshell dividido
-
-(global-set-key (kbd "C-c e") 'dired-create-empty-file) ;; Alt+Shift+E N para criar um novo arquivo
-(global-set-key (kbd "C-c d") 'dired-create-directory) ;; Alt+Shift+E D para criar um novo diretório
+(global-set-key (kbd "C-c s") 'my-eshell-split-window) 
 
 (defun move-line-up ()
   (interactive)
