@@ -65,6 +65,7 @@
   (eshell))                    
 
 (global-set-key (kbd "C-c f") 'open-dired)
+(global-set-key (kbd "C-c q") 'save-buffers-kill-emacs)
 
 (global-set-key (kbd "C-c s") 'my-eshell-split-window) ;; Alt+Shift+W S para abrir Eshell dividido
 
