@@ -48,6 +48,7 @@
 (load-file "~/.emacs.d/modes/haskell-mode.el")
 (load-file "~/.emacs.d/modes/c-mode.el")
 (load-file "~/.emacs.d/modes/asm-mode.el")
+(load-file "~/.emacs.d/slime/config.el")
 
 (use-package all-the-icons
   :ensure t)
@@ -97,6 +98,7 @@
 (add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
 (add-hook 'lisp-mode-hook 'enable-paredit-mode)
 (add-hook 'slime-repl-mode-hook 'enable-paredit-mode)
+
 (require 'paredit)
 (defun override-slime-del-key ()
   (define-key slime-repl-mode-map
