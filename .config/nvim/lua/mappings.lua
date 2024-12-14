@@ -55,6 +55,6 @@ end
 -- Key bindings for insert mode
 vim.api.nvim_set_keymap('i', '<A-Up>', '', { noremap = true, silent = true, callback = move_line_up })
 vim.api.nvim_set_keymap('i', '<A-Down>', '', { noremap = true, silent = true, callback = move_line_down })
-vim.api.nvim_set_keymap('i', '<C-S-Up>', '', { noremap = true, silent = true, callback = select_lines_up })
-vim.api.nvim_set_keymap('i', '<C-S-Down>', '', { noremap = true, silent = true, callback = select_lines_down })
+vim.api.nvim_set_keymap('i', '<C-Up>', '', { noremap = true, silent = true, callback = select_lines_up })
+vim.api.nvim_set_keymap('i', '<C-Down>', '', { noremap = true, silent = true, callback = select_lines_down })
 
